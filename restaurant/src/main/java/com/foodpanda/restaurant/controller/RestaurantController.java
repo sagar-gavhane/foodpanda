@@ -1,5 +1,6 @@
 package com.foodpanda.restaurant.controller;
 
+import com.foodpanda.restaurant.dto.RestaurantDto;
 import com.foodpanda.restaurant.entity.Restaurant;
 import com.foodpanda.restaurant.service.RestaurantService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +17,8 @@ public class RestaurantController {
     private RestaurantService restaurantService;
 
     @GetMapping
-    public ResponseEntity<List<Restaurant>> getRestaurants() {
-        List<Restaurant> restaurants = restaurantService.getRestaurants();
+    public ResponseEntity<List<RestaurantDto>> getRestaurants() {
+        List<RestaurantDto> restaurants = restaurantService.getRestaurants();
         return new ResponseEntity<>(restaurants, HttpStatus.OK);
     }
 
